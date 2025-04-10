@@ -1,0 +1,145 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow-y: auto; /* allow vertical scrolling */
+}
+
+.home-page {
+  min-height: 100vh; /* makes sure full view height at least */
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  overflow-y: auto;
+}
+
+.content-wrapper {
+  padding: 40px 20px;
+  max-width: 800px;
+  margin: auto;
+}
+  
+  /* Heading Box */
+  .intro-heading {
+    background: rgba(0, 0, 0, 0.5);
+    color: #f3f0f0;
+    padding: 20px 40px;
+    border-radius: 20px;
+    margin: 30px auto 0;
+    max-width: 800px;
+    font-size: 1.8rem;
+    text-align: center;
+  }
+  
+  .main-text-box {
+    margin: 150px auto 30px; /* 🔼 push it down from the top */
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    max-width: 900px;
+    padding: 30px;
+    border-radius: 20px;
+    color: #080808;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+  
+  
+  
+  .main-text-box p {
+    white-space: pre-wrap;
+    margin: 0;
+  }
+  .content-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end; /* ⬇ pushes to bottom */
+    min-height: 100vh;
+    padding-bottom: 50px; /* space from bottom */
+  }
+  
+  /* Friends List Buttons */
+  .friends-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin: 20px 0 60px;
+  }
+  
+  .friends-list a {
+    padding: 12px 25px;
+    background-color: hotpink;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: bold;
+    color: white;
+    font-size: 1.2rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s ease;
+  }
+  
+  .friends-list a:hover {
+    background-color: deeppink;
+    transform: scale(1.05);
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  .friends-list a:hover,
+  .friends-list a:focus {
+    box-shadow: 0 0 10px deeppink, 0 0 20px hotpink;
+  }
+  .content-wrapper {
+    animation: fadeIn 2s ease;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+      
+  /* Floating Heart Animations */
+  .heart-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 9999;
+  }
+  
+  .heart-symbol {
+    position: absolute;
+    bottom: 0;
+    font-size: 24px;
+    animation: floatUp 4s ease-in;
+    pointer-events: none;
+    opacity: 0.8;
+  }
+  .scroll-down {
+    font-size: 1.3rem;
+    color: #fff;
+    margin-top: 30px;
+    animation: bounce 2s infinite;
+  }
+  
+  @keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(10px); }
+  }
+  
+  @keyframes floatUp {
+    0% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(-100vh);
+      opacity: 0;
+    }
+  }  

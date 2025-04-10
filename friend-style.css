@@ -1,0 +1,84 @@
+body.friend-page {
+    margin: 0;
+    background-color: black;
+    color: white;
+    font-family: 'Segoe UI', sans-serif;
+    text-align: center;
+  }
+  
+  .scrolling-gallery {
+    overflow: hidden;
+    position: relative;
+    white-space: nowrap;
+    width: 100%;
+    background-color: #000; /* optional for better look */
+    padding: 20px 0;
+  }
+  .love-pops {
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 10;
+  }
+  
+  .heart {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: transparent;
+    font-size: 24px;
+    animation: float 6s infinite ease-in;
+  }
+  
+  .heart::before {
+    content: "💖";
+  }
+  
+  @keyframes float {
+    0% {
+      transform: translateY(100vh) scale(0.5);
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(-10vh) scale(1.2);
+      opacity: 0;
+    }
+  }
+  
+  /* Randomly position hearts with different delays */
+  .heart:nth-child(1) { left: 10%; animation-delay: 0s; }
+  .heart:nth-child(2) { left: 25%; animation-delay: 1s; }
+  .heart:nth-child(3) { left: 40%; animation-delay: 2s; }
+  .heart:nth-child(4) { left: 55%; animation-delay: 3s; }
+  .heart:nth-child(5) { left: 70%; animation-delay: 4s; }
+  .heart:nth-child(6) { left: 85%; animation-delay: 5s; }
+  
+  
+  .image-track {
+    display: inline-block;
+    animation: scroll-left 30s linear infinite;
+  }
+  
+  .image-track img {
+    height: 300px; /* increase size here */
+    width: auto;
+    margin: 0 20px;
+    border-radius: 20px;
+    border: 4px solid #ff9ecb;
+    box-shadow: 0 0 20px rgba(255, 105, 180, 0.4);
+  }
+  @keyframes scroll-left {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }    
